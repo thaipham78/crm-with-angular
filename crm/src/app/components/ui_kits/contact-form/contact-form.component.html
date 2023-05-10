@@ -1,0 +1,60 @@
+<div class="contactForm w-80 mt-4">
+  <h1 class="w-50 mx-auto text-center">Create contact</h1>
+  <form
+    [formGroup]="contactForm"
+    (ngSubmit)="onSubmit()"
+    class="w-50 mx-auto"
+    id="contact"
+  >
+    <div class="my-4">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="First Name"
+        id="contactName"
+        formControlName="first_name"
+      />
+    </div>
+    <div class="my-4">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Last Name"
+        id="contactName"
+        formControlName="last_name"
+      />
+    </div>
+    <div class="my-4">
+      <select
+        formControlName="company_id"
+        class="form-select"
+      >
+        <option [value]="''" disabled>Select Company</option>
+        <option  *ngFor="let option of options" [value]="option.val">
+          {{ option.text }}
+        </option>
+      </select>
+    </div>
+    <div class="mb-4">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Phone"
+        id="contactPhone"
+        formControlName="phone"
+      />
+    </div>
+    <div class="my-4">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Email"
+        id="contactEmail"
+        formControlName="email"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary w-100">
+      {{ currentAction }}
+    </button>
+  </form>
+</div>

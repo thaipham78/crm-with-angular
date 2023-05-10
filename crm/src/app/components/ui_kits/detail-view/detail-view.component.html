@@ -1,0 +1,19 @@
+<div class="Update">
+  <button (click)="goTo()" type="button" class="btn btn-primary">
+    Update {{ currentEntity }}
+  </button>
+</div>
+<div class="card mt-3" >
+  <div class="card-body" >
+    <h5 class="card-title">{{ currentEntity }} Detail</h5>
+    <ng-template [ngIf]="detailData" *ngFor="let property of detailData">
+      <p class="card-text">
+        {{ property[0] | titlecase }} :
+        <Strong>{{ property[1] }}</Strong>
+      </p>
+    </ng-template>
+
+    <!-- <p class="card-text">Phone : <Strong>02555552</Strong></p>
+  <p class="card-text">Mail : <Strong>Bruce@gmail.com</Strong></p> -->
+  </div>
+</div>
